@@ -1,0 +1,29 @@
+mutation CreateBook @auth(level: USER) {
+  book_insert(data: {
+    title: "Example Book"
+    author: "Jane Doe"
+    genre: "Fiction"
+  })
+}
+
+query ListBooks @auth(level: PUBLIC) {
+  books {
+    id
+    title
+    author
+    genre
+  }
+}
+
+mutation UpdateBook($id: UUID!) @auth(level: USER) {
+  book_update(
+    id: $id
+    data: {
+      genre: "Science Fiction"
+    }
+  )
+}
+
+mutation DeleteBook($id: UUID!) @auth(level: USER) {
+  book_delete(id: $id)
+}

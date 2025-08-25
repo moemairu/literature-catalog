@@ -1,0 +1,12 @@
+specVersion: "v1"
+serviceId: "ibm"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "ibm-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./example"]

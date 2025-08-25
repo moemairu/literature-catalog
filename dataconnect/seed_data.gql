@@ -1,0 +1,35 @@
+mutation SeedDatabase @auth(level: USER) {
+  book_upsertMany(data: [
+    {
+      title: "The Hitchhiker's Guide to the Galaxy",
+      author: "Douglas Adams",
+      genre: "Science Fiction",
+      publicationYear: 1979,
+      pageCount: 224
+    },
+    {
+      title: "Pride and Prejudice",
+      author: "Jane Austen",
+      genre: "Romance",
+      publicationYear: 1813,
+      pageCount: 279
+    },
+    {
+      title: "1984",
+      author: "George Orwell",
+      genre: "Dystopian",
+      publicationYear: 1949,
+      pageCount: 328
+    }
+  ])
+  user_upsertMany(data: [
+    {
+      displayName: "John Doe",
+      email: "john.doe@example.com"
+    },
+    {
+      displayName: "Jane Smith",
+      email: "jane.smith@example.com"
+    }
+  ])
+}

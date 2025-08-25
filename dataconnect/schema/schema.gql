@@ -1,0 +1,42 @@
+type User @table {
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+}
+
+type Book @table {
+  title: String!
+  author: String!
+  createdAt: Timestamp!
+  isbn: String
+  genre: String
+  publicationYear: Int
+  pageCount: Int
+  summary: String
+  coverImageUrl: String
+}
+
+type ReadingEntry @table {
+  user: User!
+  book: Book!
+  readDate: Timestamp!
+  createdAt: Timestamp!
+  notes: String
+  rating: Int
+}
+
+type BookList @table {
+  user: User!
+  name: String!
+  createdAt: Timestamp!
+  updatedAt: Timestamp!
+  description: String
+}
+
+type BookListItem @table {
+  bookList: BookList!
+  book: Book!
+  createdAt: Timestamp!
+  note: String
+}
